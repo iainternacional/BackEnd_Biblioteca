@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Biblioteca.BackEnd.Infrastructure.Framework\Biblioteca.BackEnd.Infrastructure.Framework.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Biblioteca\" />
-  </ItemGroup>
-
 </Project>
