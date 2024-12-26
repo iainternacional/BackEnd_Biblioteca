@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca.BackEnd.Domain.Entities\Biblioteca.BackEnd.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Biblioteca.BackEnd.Infrastructure.Data\Biblioteca.BackEnd.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\Biblioteca.BackEnd.Infrastructure.Framework\Biblioteca.BackEnd.Infrastructure.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Biblioteca\" />
+  </ItemGroup>
+
+</Project>
