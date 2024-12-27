@@ -12,6 +12,6 @@ namespace Biblioteca.BackEnd.Application.Services.Biblioteca
     {
         Task<Autor> ObtenerAutorPorId(int id);
         int InsertarAutor(AutorRequest autorRequest);
-        void ActualizarAutor(AutorRequest autorRequest, string codUsuario)
+        void ActualizarAutor(AutorRequest autorRequest, string codUsuario);
     }
 }

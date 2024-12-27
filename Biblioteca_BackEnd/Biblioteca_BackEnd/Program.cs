@@ -1,4 +1,21 @@
+using Biblioteca.BackEnd.Application.Services.Biblioteca;
+using Biblioteca.BackEnd.Infrastructure.Data.EntityFramework;
+using Biblioteca.BackEnd.Infrastructure.Data.Repositories;
+using Biblioteca.BackEnd.Infrastructure.Framework.RepositoryPattern;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//Inyeccion dependencias
+builder.Services.AddDbContext<BibliotecaDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//Registrar servicios Application
+builder.Services.AddScoped<ILibrosService, LibrosService>();
+builder.Services.AddScoped<IAutorService, AutorService>();
+
+//Registrar repositorio genérico y se indica que use el contexto de BibliotecaDbContext
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IRepositoryBiblioteca<>), typeof(RepositoryBiblioteca<>));
 
 // Add services to the container.
 
@@ -18,7 +35,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllers();
 
