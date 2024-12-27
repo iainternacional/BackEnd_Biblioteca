@@ -18,7 +18,6 @@ namespace Biblioteca.BackEnd.Application.Services.Biblioteca
         {
             this.repositoryAutor = repositoryAutor;
         }
-
         public Task<Autor> ObtenerAutorPorId(int id)
         {
             try
@@ -47,6 +46,29 @@ namespace Biblioteca.BackEnd.Application.Services.Biblioteca
                 repositoryAutor.Commit();
 
                 return nuevoAutor.IdAutor;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void ActualizarAutor(AutorRequest autorRequest, string codUsuario)
+        {
+            try
+            {
+                var autorModificado = repositoryAutor.GetById((int)autorRequest.IdAutor);
+
+                autorModificado.CodUsuarioModifica = codUsuario;
+                autorModificado.FechaModifica = DateTime.Now;
+                autorModificado.CiudadProcedencia = autorRequest.CiudadProcedencia;
+                autorModificado.FechaNacimiento = autorRequest.FechaNacimiento;
+                autorModificado.CorreoElectronico = autorRequest.CorreoElectronico;
+                autorModificado.NombreCompleto = autorRequest.NombreCompleto;
+
+                repositoryAutor.Update(autorModificado);
+                repositoryAutor.Commit();
+
             }
             catch (Exception)
             {

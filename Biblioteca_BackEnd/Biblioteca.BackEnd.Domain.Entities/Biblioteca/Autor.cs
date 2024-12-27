@@ -15,5 +15,9 @@ namespace Biblioteca.BackEnd.Domain.Entities.Biblioteca
         public DateTime FechaNacimiento { get; set; }
         public string? CiudadProcedencia { get; set; }
         public string? CorreoElectronico { get; set; }
+        public DateTime FechaCrea { get; set; }
+        public string? CodUsuarioCrea { get; set; }
+        public DateTime? FechaModifica { get; set; }
+        public string? CodUsuarioModifica { get; set; }
     }
 }
