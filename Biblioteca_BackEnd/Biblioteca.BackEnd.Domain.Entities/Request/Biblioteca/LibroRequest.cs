@@ -1,15 +1,14 @@
-﻿using System;
+﻿using Biblioteca.BackEnd.Domain.Entities.Biblioteca;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biblioteca.BackEnd.Domain.Entities.Biblioteca
+namespace Biblioteca.BackEnd.Domain.Entities.Request.Biblioteca
 {
-    public class Libro
+    public class LibroRequest
     {
-        [Key]
         public int IdLibro { get; set; }
         public string? Titulo { get; set; }
         public int Anio { get; set; }

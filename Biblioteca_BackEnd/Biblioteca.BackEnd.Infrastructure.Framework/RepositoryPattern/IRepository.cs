@@ -22,6 +22,7 @@ namespace Biblioteca.BackEnd.Infrastructure.Framework.RepositoryPattern
         IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "");
         IEnumerable<T> GetQueryable(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "");
         IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetListAllAsync();
         IEnumerable<T> GetAllQueryable();
         int Commit();
         void ExecuteSqlCommand(string procedureName, object parameteres);

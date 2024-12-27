@@ -99,7 +99,10 @@ namespace Biblioteca.BackEnd.Infrastructure.Data.Repositories
         {
             return dbSet.ToList();
         }
-
+        public async Task<IEnumerable<TEntity>> GetListAllAsync()
+        {
+            return await dbSet.ToListAsync();
+        }
         public virtual IEnumerable<TEntity> GetAllQueryable()
         {
             return dbSet.AsQueryable();
