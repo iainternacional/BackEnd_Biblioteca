@@ -10,4 +10,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca.BackEnd.Application\Biblioteca.BackEnd.Application.csproj" />
+    <ProjectReference Include="..\Biblioteca.BackEnd.Domain.Entities\Biblioteca.BackEnd.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Biblioteca.BackEnd.Infrastructure.Data\Biblioteca.BackEnd.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\Biblioteca.BackEnd.Infrastructure.Framework\Biblioteca.BackEnd.Infrastructure.Framework.csproj" />
+  </ItemGroup>
+
 </Project>

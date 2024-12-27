@@ -10,6 +10,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Biblioteca.BackEnd.Infrastructure.Framework.RepositoryPattern;
 
 namespace Biblioteca.BackEnd.Infrastructure.Data.Repositories
 {
@@ -100,7 +101,7 @@ namespace Biblioteca.BackEnd.Infrastructure.Data.Repositories
         {
             return dbSet.ToList();
         }
-        public async Task<IEnumerable<TEntity>> GetListAllAsync()
+        public virtual async Task<IEnumerable<TEntity>> GetListAllAsync()
         {
             return await dbSet.ToListAsync();
         }

@@ -21,7 +21,7 @@ namespace Biblioteca.BackEnd.Infrastructure.Data.EntityFramework
                 throw new ArgumentException("storedProcedure");
 
             var arguments = PrepareArguments(storedProcedure, parameters);
-            return self.ExecuteSqlCommand(arguments.Item1, arguments.Item2);
+            return self.ExecuteSqlCommandSmart(arguments.Item1, arguments.Item2);
         }
         private static Tuple<string, object[]> PrepareArguments(string storedProcedure, object parameters)
         {
